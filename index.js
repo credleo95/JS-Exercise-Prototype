@@ -111,10 +111,10 @@ function Airplane(name) {
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. The Global/Window Binding is the 
-    2. Implicit Binding 
-    3. Explicit Binding 
-    4. New Binding
+    1. The Global/Window Binding is the Grand Stadium of the container. It's in reference to what envelopes everything. 
+    2. Implicit Binding is using dot notation with the 'this' keyword. 
+    3. Explicit Binding is the usage of .call() and .apply() to create a new object based upon the Parent object.  
+    4. New Binding is using the "new" keyword and constructor function to create another object with the different arguments. 
   */
   
   
