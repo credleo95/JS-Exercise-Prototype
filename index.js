@@ -39,10 +39,23 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person() {
-    
+ function Person(name,age) {
+  this.name = name;
+  this.age = age;  
+  this.stomach = [];
   }
- 
+
+  Person.prototype.eat = function (someFood){
+    if (this.eat.length < 10 ){
+      return this.stomach.push(someFood)
+    }
+  }
+  Person.prototype.poop = function (){
+    this.stomach = [];
+  }
+ Person.prototype.toString = function (){
+   return `${this.name}, ${this.age}`
+ }
  
 
   
@@ -63,9 +76,19 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+ function Car(model, milesPerGallon) {
+    this.model = model; 
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0; 
   }
+
+  Car.prototype.fill = function (gallons) {
+    return (this.tank.length + gallons);
+  }
+
+
+
   
   
   /*
@@ -75,18 +98,23 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
+ function Baby(name,age,favoriteToy) {
+   Person.call(this, name, age)
+   this.favoriteToy = favoriteToy;
    
   }
- 
+ Baby.prototype = Object.create(Person.prototype)
+ Baby.prototype.play = function () {
+   return `Playing with ${this.favoriteToy}`
+ }
   
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. The Global/Window Binding is the Grand Stadium of the container. It's in reference to what envelopes everything. 
+    2. Implicit Binding is using dot notation with the 'this' keyword. 
+    3. Explicit Binding is the usage of .call() and .apply() to create a new object based upon the Parent object.  
+    4. New Binding is using the "new" keyword and constructor function to create another object with the different arguments. 
   */
   
   
